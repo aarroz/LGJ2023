@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://t4m7r3gsv6ke"]
+
+[ext_resource type="Script" path="res://Planet.gd" id="1_66dpa"]
+[ext_resource type="SpriteFrames" uid="uid://cfebqnps8pjg" path="res://assets/Planet_TypeA/Planet_TypeA.tres" id="2_tcb7f"]
+[ext_resource type="SpriteFrames" uid="uid://b8wc6857mjvvi" path="res://assets/ATMO_AnimationFrames/Atmosphere.tres" id="3_etbmp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4h0b"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_682l6"]
+radius = 512.0
+
+[node name="Planet" type="Area2D"]
+position = Vector2(632, 450)
+gravity_space_override = 2
+gravity_point = true
+gravity = 200.0
+linear_damp_space_override = 2
+script = ExtResource("1_66dpa")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("CircleShape2D_i4h0b")
+
+[node name="Planet_Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("2_tcb7f")
+autoplay = "default"
+frame_progress = 0.108322
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_682l6")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Atmo_Anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_etbmp")
+autoplay = "default"
+frame = 14
+frame_progress = 1.0

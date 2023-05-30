@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bktvyxtako0ox"]
+
+[ext_resource type="SpriteFrames" uid="uid://cfebqnps8pjg" path="res://assets/Planet_TypeA/Planet_TypeA.tres" id="1_1nfdk"]
+[ext_resource type="Script" path="res://assets/asteroid.gd" id="1_4idps"]
+[ext_resource type="SpriteFrames" uid="uid://b8wc6857mjvvi" path="res://assets/ATMO_AnimationFrames/Atmosphere.tres" id="3_yvkup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q47uq"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lovo1"]
+radius = 120.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fchw3"]
+radius = 512.0
+
+[node name="Asteroid" type="Node2D" groups=["message", "minimap_objects"]]
+script = ExtResource("1_4idps")
+
+[node name="Asteroid_Body" type="StaticBody2D" parent="."]
+
+[node name="Body_Sprite" type="AnimatedSprite2D" parent="Asteroid_Body"]
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("1_1nfdk")
+autoplay = "default"
+frame_progress = 0.089034
+
+[node name="Body_Collision" type="CollisionShape2D" parent="Asteroid_Body"]
+shape = SubResource("CircleShape2D_q47uq")
+
+[node name="Fuel_Station" type="Area2D" parent="." groups=["fuel_station"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fuel_Station"]
+shape = SubResource("CircleShape2D_lovo1")
+debug_color = Color(0.701961, 0.698039, 0, 0.419608)
+
+[node name="Asteroid_Gravity" type="Area2D" parent="."]
+gravity_space_override = 2
+gravity_point = true
+gravity_point_unit_distance = 200.0
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 250.0
+
+[node name="Gravity_Area" type="CollisionShape2D" parent="Asteroid_Gravity"]
+shape = SubResource("CircleShape2D_fchw3")
+
+[node name="Gravity_Sprite" type="AnimatedSprite2D" parent="Asteroid_Gravity"]
+sprite_frames = ExtResource("3_yvkup")
+autoplay = "default"
+frame_progress = 0.253304
+
+[connection signal="body_entered" from="Fuel_Station" to="." method="_on_fuel_station_body_entered"]

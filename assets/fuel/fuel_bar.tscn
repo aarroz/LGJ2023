@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp876iy0kgcse"]
+
+[ext_resource type="Script" path="res://assets/fuel/fuel_bar.gd" id="1_7d5rv"]
+[ext_resource type="Texture2D" uid="uid://k7h0m58mgxof" path="res://assets/fuel/barHorizontal_white_mid.png" id="1_pnr1b"]
+[ext_resource type="Texture2D" uid="uid://bm35ywwga2t0l" path="res://assets/fuel/barHorizontal_yellow_mid.png" id="2_rfbug"]
+
+[node name="FuelBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7d5rv")
+
+[node name="FuelBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 40.0
+max_value = 250.0
+value = 250.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_pnr1b")
+texture_progress = ExtResource("2_rfbug")

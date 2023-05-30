@@ -1,0 +1,211 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbq5i54t3hf18"]
+
+[ext_resource type="PackedScene" uid="uid://07u8kg4qmm8k" path="res://rocket.tscn" id="1_q50y4"]
+[ext_resource type="Texture2D" uid="uid://1l8d4u3tq7op" path="res://icon.svg" id="2_bwvpf"]
+[ext_resource type="Texture2D" uid="uid://26nlur5kkjwy" path="res://glassPanel.png" id="8_0dtrx"]
+[ext_resource type="Texture2D" uid="uid://2ol8q5u80oyt" path="res://metalPanel.png" id="8_p2wd3"]
+[ext_resource type="Script" path="res://MiniMap.gd" id="9_off7x"]
+[ext_resource type="PackedScene" uid="uid://bktvyxtako0ox" path="res://assets/asteroid.tscn" id="10_d7i8q"]
+[ext_resource type="Texture2D" uid="uid://vogqdp0n1hrg" path="res://assets/backgrounds/Layer01.png" id="11_0s2u4"]
+[ext_resource type="PackedScene" uid="uid://cfwru0h4r10e3" path="res://assets/player_station.tscn" id="12_y8jqn"]
+[ext_resource type="PackedScene" uid="uid://dp876iy0kgcse" path="res://assets/fuel/fuel_bar.tscn" id="37_4e1a2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50nup"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tmeor"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[node name="Test" type="Node2D"]
+
+[node name="Rocket" parent="." instance=ExtResource("1_q50y4")]
+position = Vector2(631, 335)
+
+[node name="Player_Station" parent="." instance=ExtResource("12_y8jqn")]
+position = Vector2(631, 415)
+
+[node name="Astroids" type="Node2D" parent="."]
+visible = false
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(267, -345)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(1083, -655)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(828, -1353)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(1644, -1663)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(-656, -992)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(160, -1302)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(-95, -2000)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(721, -2310)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(172, -2609)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(988, -2919)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(733, -3617)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(1549, -3927)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(-751, -3256)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(65, -3566)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(-190, -4264)
+texture = ExtResource("2_bwvpf")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Astroids"]
+modulate = Color(0.309804, 0.313726, 0.247059, 1)
+material = SubResource("CanvasItemMaterial_50nup")
+position = Vector2(626, -4574)
+texture = ExtResource("2_bwvpf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MiniMap" type="MarginContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(5, 5)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("9_off7x")
+player = NodePath("../../Rocket")
+
+[node name="Frame" type="NinePatchRect" parent="CanvasLayer/MiniMap"]
+layout_mode = 2
+texture = ExtResource("8_p2wd3")
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MiniMap"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GlassPanel" type="NinePatchRect" parent="CanvasLayer/MiniMap/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("8_0dtrx")
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="PlayerMarker" type="Sprite2D" parent="CanvasLayer/MiniMap/MarginContainer/GlassPanel"]
+position = Vector2(90, 90)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_bwvpf")
+
+[node name="MobMarker" type="Sprite2D" parent="CanvasLayer/MiniMap/MarginContainer/GlassPanel"]
+visible = false
+modulate = Color(1, 0.996078, 0, 1)
+position = Vector2(76, 20)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_bwvpf")
+
+[node name="AlertMarker" type="Sprite2D" parent="CanvasLayer/MiniMap/MarginContainer/GlassPanel"]
+visible = false
+modulate = Color(0, 1, 0.0392157, 1)
+position = Vector2(24, 21)
+scale = Vector2(0.1, 0.1)
+texture = SubResource("CompressedTexture2D_tmeor")
+
+[node name="FuelBar" parent="CanvasLayer" instance=ExtResource("37_4e1a2")]
+offset_top = 4.0
+offset_bottom = 4.0
+
+[node name="SpaceBG" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Layer01" type="ParallaxLayer" parent="CanvasLayer/SpaceBG"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="Layer01_Sprite" type="Sprite2D" parent="CanvasLayer/SpaceBG/Layer01"]
+texture = ExtResource("11_0s2u4")
+centered = false
+
+[node name="Asteroid" parent="." instance=ExtResource("10_d7i8q")]
+position = Vector2(-872, -1818)
+metadata/_edit_group_ = true
+
+[node name="Asteroid2" parent="." instance=ExtResource("10_d7i8q")]
+position = Vector2(1739, -4869)
+metadata/_edit_group_ = true
+
+[node name="Asteroid3" parent="." instance=ExtResource("10_d7i8q")]
+position = Vector2(-2338, -6395)
+metadata/_edit_group_ = true
+
+[connection signal="fuel_max" from="Rocket" to="CanvasLayer/FuelBar" method="_on_rocket_fuel_max"]
+[connection signal="fuel_updated" from="Rocket" to="CanvasLayer/FuelBar" method="_on_rocket_fuel_updated"]

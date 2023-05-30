@@ -1,0 +1,70 @@
+[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://b8wc6857mjvvi"]
+
+[ext_resource type="Texture2D" uid="uid://bfdhtncr77vey" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0001.png" id="1_u4fta"]
+[ext_resource type="Texture2D" uid="uid://dgdt7gmjef55p" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0002.png" id="2_pa5ce"]
+[ext_resource type="Texture2D" uid="uid://b06ys5j7njxf0" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0003.png" id="3_08ur5"]
+[ext_resource type="Texture2D" uid="uid://iwww5skgfuo1" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0004.png" id="4_mrgxh"]
+[ext_resource type="Texture2D" uid="uid://psci4k04y3tv" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0005.png" id="5_y6jwq"]
+[ext_resource type="Texture2D" uid="uid://bd2by7gv715ud" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0006.png" id="6_07xg0"]
+[ext_resource type="Texture2D" uid="uid://dog5uj5c0smmu" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0007.png" id="7_vy55g"]
+[ext_resource type="Texture2D" uid="uid://ctetld54i12ya" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0008.png" id="8_v858c"]
+[ext_resource type="Texture2D" uid="uid://db1mffuld2qaf" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0009.png" id="9_18ppd"]
+[ext_resource type="Texture2D" uid="uid://4ynbnhkgchsi" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0010.png" id="10_5tem8"]
+[ext_resource type="Texture2D" uid="uid://cu5ix4vl327fy" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0011.png" id="11_7cky7"]
+[ext_resource type="Texture2D" uid="uid://dpbhjjrjqi2oh" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0012.png" id="12_kbcxm"]
+[ext_resource type="Texture2D" uid="uid://bw1v0vkec8bp1" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0013.png" id="13_cs7cw"]
+[ext_resource type="Texture2D" uid="uid://1biqjky8mbl7" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0014.png" id="14_jpcw4"]
+[ext_resource type="Texture2D" uid="uid://bleot7x0l3lj2" path="res://assets/ATMO_AnimationFrames/ATMO_Sphere0015.png" id="15_ga2sr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u4fta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pa5ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_08ur5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mrgxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y6jwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_07xg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vy55g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v858c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_18ppd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5tem8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7cky7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kbcxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cs7cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jpcw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ga2sr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]

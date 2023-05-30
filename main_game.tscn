@@ -1,0 +1,172 @@
+[gd_scene load_steps=12 format=3 uid="uid://cycfx2oow5aol"]
+
+[ext_resource type="Script" path="res://main_game.gd" id="1_4wa06"]
+[ext_resource type="PackedScene" uid="uid://cfwru0h4r10e3" path="res://assets/player_station.tscn" id="1_kmp1u"]
+[ext_resource type="PackedScene" uid="uid://bktvyxtako0ox" path="res://assets/asteroid.tscn" id="2_8pddf"]
+[ext_resource type="PackedScene" uid="uid://07u8kg4qmm8k" path="res://rocket.tscn" id="3_p7fmj"]
+[ext_resource type="Script" path="res://MiniMap.gd" id="4_mm7rm"]
+[ext_resource type="Texture2D" uid="uid://2ol8q5u80oyt" path="res://metalPanel.png" id="5_eu1k5"]
+[ext_resource type="Texture2D" uid="uid://26nlur5kkjwy" path="res://glassPanel.png" id="6_8ovt5"]
+[ext_resource type="PackedScene" uid="uid://dp876iy0kgcse" path="res://assets/fuel/fuel_bar.tscn" id="8_70ppd"]
+[ext_resource type="Texture2D" uid="uid://cdikctc7r54ia" path="res://assets/minimap_player.png" id="8_jedq1"]
+[ext_resource type="Texture2D" uid="uid://cln0sfb36xeyr" path="res://assets/minimap_asteroid.png" id="9_npj82"]
+[ext_resource type="Texture2D" uid="uid://vogqdp0n1hrg" path="res://assets/backgrounds/Layer01.png" id="9_tniw0"]
+
+[node name="Main_Game" type="Node" groups=["Main"]]
+script = ExtResource("1_4wa06")
+
+[node name="Game_World" type="Node2D" parent="."]
+
+[node name="Player_Station" parent="Game_World" instance=ExtResource("1_kmp1u")]
+position = Vector2(632, 450)
+metadata/_edit_group_ = true
+
+[node name="Asteroid" parent="Game_World" instance=ExtResource("2_8pddf")]
+position = Vector2(-3231, -3318)
+metadata/_edit_group_ = true
+
+[node name="Asteroid2" parent="Game_World" instance=ExtResource("2_8pddf")]
+position = Vector2(4403, -7563)
+metadata/_edit_group_ = true
+
+[node name="Asteroid3" parent="Game_World" instance=ExtResource("2_8pddf")]
+position = Vector2(7881, 232)
+metadata/_edit_group_ = true
+
+[node name="Asteroid4" parent="Game_World" instance=ExtResource("2_8pddf")]
+position = Vector2(-3056, 1347)
+metadata/_edit_group_ = true
+
+[node name="Asteroid5" parent="Game_World" instance=ExtResource("2_8pddf")]
+position = Vector2(1515, 5126)
+metadata/_edit_group_ = true
+
+[node name="Asteroid6" parent="Game_World" instance=ExtResource("2_8pddf")]
+position = Vector2(3393, -2092)
+metadata/_edit_group_ = true
+
+[node name="Rocket" parent="Game_World" instance=ExtResource("3_p7fmj")]
+position = Vector2(630, 370)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Messages" type="PanelContainer" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -240.0
+offset_bottom = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/Messages"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="MiniMap" type="MarginContainer" parent="UI"]
+custom_minimum_size = Vector2(5, 5)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("4_mm7rm")
+player = NodePath("../../Game_World/Rocket")
+
+[node name="Frame" type="NinePatchRect" parent="UI/MiniMap"]
+layout_mode = 2
+texture = ExtResource("5_eu1k5")
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MiniMap"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GlassPanel" type="NinePatchRect" parent="UI/MiniMap/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_8ovt5")
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="PlayerMarker" type="Sprite2D" parent="UI/MiniMap/MarginContainer/GlassPanel"]
+z_index = 1
+position = Vector2(90, 90)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("8_jedq1")
+
+[node name="MobMarker" type="Sprite2D" parent="UI/MiniMap/MarginContainer/GlassPanel"]
+visible = false
+modulate = Color(1, 1, 0.439216, 1)
+position = Vector2(76, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_npj82")
+
+[node name="AlertMarker" type="Sprite2D" parent="UI/MiniMap/MarginContainer/GlassPanel"]
+visible = false
+modulate = Color(0, 1, 0.0392157, 1)
+position = Vector2(24, 21)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_npj82")
+
+[node name="FuelBar" parent="UI" instance=ExtResource("8_70ppd")]
+offset_top = 4.0
+offset_bottom = 4.0
+
+[node name="SpaceBG" type="ParallaxBackground" parent="UI"]
+
+[node name="Layer01" type="ParallaxLayer" parent="UI/SpaceBG"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="Layer01_Sprite" type="Sprite2D" parent="UI/SpaceBG/Layer01"]
+texture = ExtResource("9_tniw0")
+centered = false
+
+[node name="Pop_Up" type="VBoxContainer" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -20.0
+offset_right = 35.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Congrats" type="Label" parent="UI/Pop_Up"]
+layout_mode = 2
+text = "You won!"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="UI/Pop_Up"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="UI/Pop_Up"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="fuel_empty" from="Game_World/Rocket" to="." method="_on_rocket_fuel_empty"]
+[connection signal="fuel_max" from="Game_World/Rocket" to="UI/FuelBar" method="_on_rocket_fuel_max"]
+[connection signal="fuel_updated" from="Game_World/Rocket" to="UI/FuelBar" method="_on_rocket_fuel_updated"]
+[connection signal="pressed" from="UI/Pop_Up/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Pop_Up/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=21 format=3 uid="uid://cfwru0h4r10e3"]
+
+[ext_resource type="Script" path="res://assets/player_station.gd" id="1_tb3y6"]
+[ext_resource type="Texture2D" uid="uid://bepaf41qapasv" path="res://assets/Dsymbol.png" id="2_el382"]
+[ext_resource type="Texture2D" uid="uid://c3fbn3wh7f3kt" path="res://assets/PLAYER_Station/PLAYER_Station0001.png" id="3_k40vl"]
+[ext_resource type="Texture2D" uid="uid://cb3iju4deteu5" path="res://assets/PLAYER_Station/PLAYER_Station0002.png" id="4_hw3cr"]
+[ext_resource type="Texture2D" uid="uid://ou7y62s6acs0" path="res://assets/PLAYER_Station/PLAYER_Station0003.png" id="5_7f7ia"]
+[ext_resource type="Texture2D" uid="uid://t8p0yewkx54b" path="res://assets/PLAYER_Station/PLAYER_Station0004.png" id="6_e1pcm"]
+[ext_resource type="Texture2D" uid="uid://bnaucqv5g2ih7" path="res://assets/PLAYER_Station/PLAYER_Station0005.png" id="7_cmatk"]
+[ext_resource type="Texture2D" uid="uid://cin5h6fengal0" path="res://assets/PLAYER_Station/PLAYER_Station0006.png" id="8_hrb3u"]
+[ext_resource type="Texture2D" uid="uid://c2kcs1gcbmfbe" path="res://assets/PLAYER_Station/PLAYER_Station0007.png" id="9_vrtia"]
+[ext_resource type="Texture2D" uid="uid://dgoekhefoopa7" path="res://assets/PLAYER_Station/PLAYER_Station0008.png" id="10_aniu2"]
+[ext_resource type="Texture2D" uid="uid://ufk32mm4h2w2" path="res://assets/PLAYER_Station/PLAYER_Station0009.png" id="11_0vrfv"]
+[ext_resource type="Texture2D" uid="uid://ceo4ww6o0eq2f" path="res://assets/PLAYER_Station/PLAYER_Station0010.png" id="12_7kuto"]
+[ext_resource type="Texture2D" uid="uid://bpp62cafkxygi" path="res://assets/PLAYER_Station/PLAYER_Station0011.png" id="13_12ylh"]
+[ext_resource type="Texture2D" uid="uid://161ec41xmofs" path="res://assets/PLAYER_Station/PLAYER_Station0012.png" id="14_toyqt"]
+[ext_resource type="Texture2D" uid="uid://dmtr84batui8y" path="res://assets/PLAYER_Station/PLAYER_Station0013.png" id="15_5vr5a"]
+[ext_resource type="Texture2D" uid="uid://c4t2r33b5ja80" path="res://assets/PLAYER_Station/PLAYER_Station0014.png" id="16_0qn1h"]
+[ext_resource type="Texture2D" uid="uid://bxw76jtycplp3" path="res://assets/PLAYER_Station/PLAYER_Station0015.png" id="17_d5vuc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itiqn"]
+radius = 256.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ev6"]
+size = Vector2(128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0djie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k40vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hw3cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7f7ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e1pcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cmatk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hrb3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vrtia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aniu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0vrfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7kuto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_12ylh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_toyqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5vr5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0qn1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_d5vuc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Player_Station" type="Node2D" groups=["minimap_objects"]]
+script = ExtResource("1_tb3y6")
+
+[node name="Station_Gravity" type="Area2D" parent="."]
+gravity_space_override = 2
+gravity_point = true
+gravity_point_unit_distance = 128.0
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 250.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Station_Gravity"]
+shape = SubResource("CircleShape2D_itiqn")
+
+[node name="Station_Body" type="StaticBody2D" parent="."]
+
+[node name="Station_Collision" type="CollisionShape2D" parent="Station_Body"]
+shape = SubResource("RectangleShape2D_p8ev6")
+
+[node name="Station_Sprite" type="Sprite2D" parent="Station_Body"]
+visible = false
+texture = ExtResource("2_el382")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Station_Body"]
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_0djie")
+autoplay = "default"
+frame_progress = 0.228763
+
+[connection signal="body_entered" from="Station_Gravity" to="." method="_on_station_gravity_body_entered"]
