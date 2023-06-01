@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://07u8kg4qmm8k"]
+[gd_scene load_steps=24 format=3 uid="uid://07u8kg4qmm8k"]
 
 [ext_resource type="Script" path="res://Rocket.gd" id="1_bjv0a"]
 [ext_resource type="Texture2D" uid="uid://cuoqmhe3mj533" path="res://Ship_128px.png" id="2_c83fb"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cx6cr76bajd8j" path="res://assets/PLAYER_Rocket/PLAYER_Rocket0013.png" id="16_svpq4"]
 [ext_resource type="Texture2D" uid="uid://b8y1y30q6j84m" path="res://assets/PLAYER_Rocket/PLAYER_Rocket0014.png" id="17_d1cuy"]
 [ext_resource type="Texture2D" uid="uid://3xtdtunuqy0g" path="res://assets/PLAYER_Rocket/PLAYER_Rocket0015.png" id="18_6pqit"]
+[ext_resource type="AudioStream" uid="uid://cyfm4cu5ir6im" path="res://assets/sounds/space_ship.ogg" id="19_or40e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qqhx"]
 radius = 5.0
@@ -89,6 +90,7 @@ center_of_mass_mode = 1
 center_of_mass = Vector2(0, 6)
 linear_damp_mode = 1
 script = ExtResource("1_bjv0a")
+max_fuel = 300
 metadata/_edit_group_ = true
 
 [node name="Rocket_Collision" type="CollisionShape2D" parent="."]
@@ -137,5 +139,11 @@ color_ramp = SubResource("Gradient_ub48q")
 [node name="Interact_Region" type="CollisionShape2D" parent="Interact_Area"]
 shape = SubResource("RectangleShape2D_2ct6j")
 debug_color = Color(0.0627451, 0.701961, 0, 0.419608)
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_or40e")
+volume_db = -3.0
+pitch_scale = 3.11
+max_polyphony = 4
 
 [connection signal="area_entered" from="Interact_Area" to="." method="_on_interact_area_area_entered"]

@@ -36,11 +36,15 @@ func _integrate_forces(state):
 		if Input.is_action_just_pressed("ui_up"):
 			state.apply_force(thrust.rotated(rotation) * 30)
 			burn_fuel(5)
+			$SFX.pitch_scale = 3.48
+			$SFX.play()
 		elif Input.is_action_just_pressed("ui_down"):
 			state.apply_force(thrust.rotated(rotation) * -30)
 		elif Input.is_action_just_pressed("ui_accept"):
 			state.apply_force(thrust.rotated(rotation) * 300)
 			burn_fuel(50)
+			$SFX.pitch_scale = 2.8
+			$SFX.play()
 	else:
 		state.apply_force(Vector2())
 	var rotation_direction = 0
@@ -53,10 +57,13 @@ func _integrate_forces(state):
 func _input(_event):
 	if Input.is_action_just_pressed("ui_up") and fuel != 0:
 		$Rocket_Trail.emitting = true
+		#SFX.play()
 	elif Input.is_action_just_pressed("ui_accept") and fuel != 0:
 		$Rocket_Trail.emitting = true
+		#$SFX.play()
 	else:
 		$Rocket_Trail.emitting = false
+		#SFX.stop()
 	
 
 

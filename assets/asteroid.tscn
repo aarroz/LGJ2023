@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bktvyxtako0ox"]
+[gd_scene load_steps=8 format=3 uid="uid://bktvyxtako0ox"]
 
 [ext_resource type="SpriteFrames" uid="uid://cfebqnps8pjg" path="res://assets/Planet_TypeA/Planet_TypeA.tres" id="1_1nfdk"]
 [ext_resource type="Script" path="res://assets/asteroid.gd" id="1_4idps"]
 [ext_resource type="SpriteFrames" uid="uid://b8wc6857mjvvi" path="res://assets/ATMO_AnimationFrames/Atmosphere.tres" id="3_yvkup"]
+[ext_resource type="AudioStream" uid="uid://cuvq7j7avi76u" path="res://assets/sounds/1up1.ogg" id="4_bgsud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q47uq"]
 radius = 100.0
@@ -48,5 +49,8 @@ shape = SubResource("CircleShape2D_fchw3")
 sprite_frames = ExtResource("3_yvkup")
 autoplay = "default"
 frame_progress = 0.253304
+
+[node name="Radio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bgsud")
 
 [connection signal="body_entered" from="Fuel_Station" to="." method="_on_fuel_station_body_entered"]

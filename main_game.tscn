@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cycfx2oow5aol"]
+[gd_scene load_steps=15 format=3 uid="uid://cycfx2oow5aol"]
 
 [ext_resource type="Script" path="res://main_game.gd" id="1_4wa06"]
 [ext_resource type="PackedScene" uid="uid://cfwru0h4r10e3" path="res://assets/player_station.tscn" id="1_kmp1u"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cdikctc7r54ia" path="res://assets/minimap_player.png" id="8_jedq1"]
 [ext_resource type="Texture2D" uid="uid://cln0sfb36xeyr" path="res://assets/minimap_asteroid.png" id="9_npj82"]
 [ext_resource type="Texture2D" uid="uid://vogqdp0n1hrg" path="res://assets/backgrounds/Layer01.png" id="9_tniw0"]
+[ext_resource type="AudioStream" uid="uid://dq82d8k8mrta8" path="res://assets/sounds/ggggggniknihTtttttt.ogg" id="12_wp4wk"]
+[ext_resource type="AudioStream" uid="uid://cjq4k04byyky4" path="res://assets/sounds/Lose.ogg" id="13_ceikc"]
+[ext_resource type="AudioStream" uid="uid://c8vsnfm2j63f8" path="res://assets/sounds/Win.ogg" id="14_iq1sd"]
 
 [node name="Main_Game" type="Node" groups=["Main"]]
 script = ExtResource("1_4wa06")
@@ -164,6 +167,17 @@ text = "Restart"
 [node name="Quit" type="Button" parent="UI/Pop_Up"]
 layout_mode = 2
 text = "Quit"
+
+[node name="BG_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wp4wk")
+autoplay = true
+bus = &"Music"
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ceikc")
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_iq1sd")
 
 [connection signal="fuel_empty" from="Game_World/Rocket" to="." method="_on_rocket_fuel_empty"]
 [connection signal="fuel_max" from="Game_World/Rocket" to="UI/FuelBar" method="_on_rocket_fuel_max"]

@@ -27,3 +27,4 @@ func _on_fuel_station_body_entered(body):
 		emit_signal("message_recieved")
 		$Fuel_Station/CollisionShape2D.disabled
 		emit_signal("object_removed", self)
+		$Radio.play()

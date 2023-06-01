@@ -22,6 +22,7 @@ func message_update():
 		$UI/Pop_Up/Restart.text = "Play again?"
 		$UI/Pop_Up/Quit.text = "Exit"
 		$UI/Pop_Up.show()
+		$Win.play()
 
 
 func _on_message_recieved():
@@ -41,6 +42,8 @@ func _on_rocket_fuel_empty():
 	$UI/Pop_Up/Restart.text = "Try again! I believe in you!"
 	$UI/Pop_Up/Quit.text = "Quit?"
 	$UI/Pop_Up.show()
+	$Lose.play()
+	
 
 
 func _on_restart_pressed():
