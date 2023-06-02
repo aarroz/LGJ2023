@@ -168,6 +168,19 @@ text = "Restart"
 layout_mode = 2
 text = "Quit"
 
+[node name="Preview" type="PanelContainer" parent="UI"]
+offset_left = 3.0
+offset_top = 622.0
+offset_right = 1079.0
+offset_bottom = 718.0
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Preview"]
+layout_mode = 2
+text = "No Messages Recieved"
+horizontal_alignment = 1
+
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_wp4wk")
 autoplay = true

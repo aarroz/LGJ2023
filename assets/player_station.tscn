@@ -1,7 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfwru0h4r10e3"]
+[gd_scene load_steps=20 format=3 uid="uid://cfwru0h4r10e3"]
 
 [ext_resource type="Script" path="res://assets/player_station.gd" id="1_tb3y6"]
-[ext_resource type="Texture2D" uid="uid://bepaf41qapasv" path="res://assets/Dsymbol.png" id="2_el382"]
 [ext_resource type="Texture2D" uid="uid://c3fbn3wh7f3kt" path="res://assets/PLAYER_Station/PLAYER_Station0001.png" id="3_k40vl"]
 [ext_resource type="Texture2D" uid="uid://cb3iju4deteu5" path="res://assets/PLAYER_Station/PLAYER_Station0002.png" id="4_hw3cr"]
 [ext_resource type="Texture2D" uid="uid://ou7y62s6acs0" path="res://assets/PLAYER_Station/PLAYER_Station0003.png" id="5_7f7ia"]
@@ -98,7 +97,6 @@ shape = SubResource("RectangleShape2D_p8ev6")
 
 [node name="Station_Sprite" type="Sprite2D" parent="Station_Body"]
 visible = false
-texture = ExtResource("2_el382")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Station_Body"]
 scale = Vector2(0.12, 0.12)
