@@ -28,7 +28,6 @@ window/stretch/mode="canvas_items"
 [editor]
 
 movie_writer/mjpeg_quality=1.0
-movie_writer/movie_file="/home/aaron/Documents/GDProjects/LinuxGameJam2023/20230531.avi"
 
 [physics]
 

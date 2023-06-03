@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cycfx2oow5aol"]
+[gd_scene load_steps=16 format=3 uid="uid://cycfx2oow5aol"]
 
 [ext_resource type="Script" path="res://main_game.gd" id="1_4wa06"]
 [ext_resource type="PackedScene" uid="uid://cfwru0h4r10e3" path="res://assets/player_station.tscn" id="1_kmp1u"]
@@ -14,6 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://dq82d8k8mrta8" path="res://assets/sounds/ggggggniknihTtttttt.ogg" id="12_wp4wk"]
 [ext_resource type="AudioStream" uid="uid://cjq4k04byyky4" path="res://assets/sounds/Lose.ogg" id="13_ceikc"]
 [ext_resource type="AudioStream" uid="uid://c8vsnfm2j63f8" path="res://assets/sounds/Win.ogg" id="14_iq1sd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qolo"]
+radius = 128.0
 
 [node name="Main_Game" type="Node" groups=["Main"]]
 script = ExtResource("1_4wa06")
@@ -50,6 +53,14 @@ metadata/_edit_group_ = true
 
 [node name="Rocket" parent="Game_World" instance=ExtResource("3_p7fmj")]
 position = Vector2(630, 370)
+
+[node name="Finish" type="Area2D" parent="Game_World"]
+position = Vector2(100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game_World/Finish"]
+position = Vector2(532, 450)
+shape = SubResource("CircleShape2D_7qolo")
+debug_color = Color(0.0470588, 0.701961, 0, 0.419608)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -196,5 +207,6 @@ stream = ExtResource("14_iq1sd")
 [connection signal="fuel_empty" from="Game_World/Rocket" to="." method="_on_rocket_fuel_empty"]
 [connection signal="fuel_max" from="Game_World/Rocket" to="UI/FuelBar" method="_on_rocket_fuel_max"]
 [connection signal="fuel_updated" from="Game_World/Rocket" to="UI/FuelBar" method="_on_rocket_fuel_updated"]
+[connection signal="body_entered" from="Game_World/Finish" to="." method="_on_finish_body_entered"]
 [connection signal="pressed" from="UI/Pop_Up/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/Pop_Up/Quit" to="." method="_on_quit_pressed"]
