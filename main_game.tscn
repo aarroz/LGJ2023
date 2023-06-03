@@ -180,6 +180,7 @@ metadata/_edit_group_ = true
 layout_mode = 2
 text = "No Messages Recieved"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_wp4wk")

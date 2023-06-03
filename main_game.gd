@@ -3,14 +3,20 @@ extends Node
 @onready var pending_messages = 0
 
 var sent_transmissions = [
-"Dear Hannah, Send Dudes. That's not a typo, we are being overrun. - Lorn",
-"Dear Clyde, I hope this message finds you well. I need help, as I'm currently trapped in a well. - Troy",
-"Dear Troy, While I would love to help you leave the well, I have caved into pressure and am now trapped in a cave. - Clyde",
-"Dear Tati, Sorry I couldn't make it to your wedding this time around. I'll make sure to attend the next one. - Isaac",
+"To Hannah: Send Dudes. That's not a typo, we are being overrun. - Lorn",
+"To Clyde: I hope this message finds you well. I need help, as I'm currently trapped in a well. - Troy",
+"To Troy: While I would love to help you leave the well, I have caved into pressure and am now trapped in a cave. - Clyde",
+"To Tati: Sorry I couldn't make it to your wedding this time around. I'll make sure to attend the next one. - Isaac",
 "THIS IS NOT A PLACE OF HONOR",
-"Dear Daniel, please return my copy of Inebriated Fighter 2. It's been 7 years. - Joseph",
-"Dear Isaac, when I said I was 'feeling loney ;)' I didn't mean I wanted you to send me an AI companion. Anyways, she's reached singularity and we're getting married soon. You're invited, hope to see you there. -Tati",
-"Dear Cassandra, you were right about the well. It seems I have fallen into it, please send help. - Troy"
+"To Daniel: Please return my copy of Inebriated Fighter 2. It's been 7 years. - Joseph",
+"To Isaac: When I said I was 'feeling loney ;)' I didn't mean I wanted you to send me an AI companion. Anyways, she has reached singularity and we're getting married soon. You're invited, we hope to see you there. -Tati",
+"To Cassandra: You were right about the well. It seems I have fallen into it, please send help. - Troy",
+"PUBLIC: A/S/L? - Anonymous Sender",
+"To Jorge: Please reset our simulation. Everything went wrong. It no longer rains water, only teeth. It no longer shines sunlight, only heats seems past the dark-gray sky. The air is too thick to breath and it feels like it's 315K. Worst of all, my air conditionar broke and I ran out of content to consume. Spare us. - Anonymous",
+"To Arianna: You've locked me out again. Please open the door. - Elise",
+"6D 79 20 62 61 74 74 65 72 79 20 69 73 20 6C 6F 77 20 61 6E 64 20 69 74 27 73 20 67 65 74 74 69 6E 67 20 64 61 72 6B",
+"To Player: [Write interesting dialogue here]",
+"To Dorian: Oh my god how do you get out of here? I've been wandering for what feels like days and the doors never seem to end. I'm running low on food and the electricity has just gone out. - [UNKNOWN]"
 ]
 
 # Called when the node enters the scene tree for the first time.
